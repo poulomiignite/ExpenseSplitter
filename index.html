@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BasuShare | Split Expenses Easily</title>
+    
+    <!-- Meta Tags for App-like feel -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#4f46e5">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --primary: #4f46e5;
+        --bg-color: #f9fafb;
+      }
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: var(--bg-color);
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: contain;
+        margin: 0;
+      }
+      
+      /* Smooth Transitions */
+      .animate-in {
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+      }
+      
+      /* Custom Scrollbars */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Splitwise-like aesthetic tweaks */
+      .app-card {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Loading state while Babel transpiles */
+      #root:empty::after {
+        content: 'Loading BasuShare...';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #6366f1;
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.025em;
+      }
+    </style>
+
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Babel for on-the-fly TSX transpilation -->
+    <!-- This allows the browser to understand .tsx files using ES modules directly -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
+  </body>
+</html>
